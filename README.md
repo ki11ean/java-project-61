@@ -1,0 +1,8 @@
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/ki11ean/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/ki11ean/java-project-61/actions)
+
+### Maintainability:
+[![Maintainability](https://api.codeclimate.com/v1/badges/1a17bfb302b145567f2a/maintainability)](https://codeclimate.com/github/ki11ean/java-project-61/maintainability)
+
+### Test Coverage Badge:
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1a17bfb302b145567f2a/test_coverage)](https://codeclimate.com/github/ki11ean/java-project-61/test_coverage)
