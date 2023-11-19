@@ -3,3 +3,7 @@ run-dist:
 
 lint:
 	./gradlew checkstyleMain
+
+report:
+	./gradlew jacocoTestReport
+
