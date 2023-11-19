@@ -26,3 +26,7 @@ tasks.test {
 //compileJava {
 //    options.release = 21
 //}
+
+//run {
+//  standardInput = System.in
+//}
