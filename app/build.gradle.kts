@@ -40,10 +40,14 @@ tasks.jacocoTestReport {
     }
 }
 
-//compileJava {
-//    options.release = 21
-//}
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(19))
+    }
+}
 
-//run {
-//  standardInput = System.in
-//}
+/*tasks.register("run") {
+    doLast {
+        standardInput = System.`in`
+    }
+}*/

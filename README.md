@@ -6,3 +6,7 @@
 
 ### Test Coverage Badge:
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1a17bfb302b145567f2a/test_coverage)](https://codeclimate.com/github/ki11ean/java-project-61/test_coverage)
+
+
+### Игры разума 5 шаг: 
+[![asciicast](https://asciinema.org/a/scmSg4lVqsIvTJJJ21AvE8zcb.svg)](https://asciinema.org/a/scmSg4lVqsIvTJJJ21AvE8zcb)
