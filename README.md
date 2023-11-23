@@ -9,4 +9,4 @@
 
 
 ### Игры разума 5 шаг: 
-[![asciicast](https://asciinema.org/a/scmSg4lVqsIvTJJJ21AvE8zcb.svg)](https://asciinema.org/a/scmSg4lVqsIvTJJJ21AvE8zcb)
+https://asciinema.org/a/scmSg4lVqsIvTJJJ21AvE8zcb
