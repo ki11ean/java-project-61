@@ -2,8 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Scanner;
-
 public class Calc {
 
     public static String greetingGame() {
@@ -11,7 +9,6 @@ public class Calc {
     }
 
     public static void calc() {
-        Scanner scanner = new Scanner(System.in);
 
         var operandOne = Engine.randomNumber();
         var operandTwo = Engine.randomNumber();
@@ -35,16 +32,6 @@ public class Calc {
             default:
                 throw new Error("Error while default Calc.java");
         }
-
         System.out.println("Question: " + operandOne + " " + operations[numberOperand] + " " + operandTwo);
-        System.out.print("Your answer: ");
-        Engine.answer = scanner.next();
-
-        if (Engine.answer.equals(Engine.check)) {
-            System.out.println("Correct!");
-            Engine.i++;
-        } else {
-            Engine.i = 4;
-        }
     }
 }

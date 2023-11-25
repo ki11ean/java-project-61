@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import java.util.Scanner;
 
 
 public class Engine {
@@ -28,6 +29,7 @@ public class Engine {
         }
 
         i = 0;
+        Scanner scanner = new Scanner(System.in);
 
         while (i < 3) {
             switch (App.numberGame) {
@@ -42,6 +44,16 @@ public class Engine {
                     break;
                 default:
                     throw new Error("Error while default Engine.java");
+            }
+            System.out.print("Your answer: ");
+
+            Engine.answer = scanner.next();
+
+            if (Engine.answer.equals(Engine.check)) {
+                System.out.println("Correct!");
+                Engine.i++;
+            } else {
+                Engine.i = 4;
             }
         }
 
