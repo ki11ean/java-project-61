@@ -10,3 +10,6 @@
 
 ### Игры разума 5 шаг: 
 https://asciinema.org/a/scmSg4lVqsIvTJJJ21AvE8zcb
+
+### Игры разума 6 шаг:
+https://asciinema.org/a/FUCXZkxiDJxZQSYdg7gCVzWBn

@@ -12,8 +12,9 @@ public class Greet {
         System.out.println("Hello, " + userName + "!");
 
         name = userName;
-    }
-    public static String getName() {
-        return name;
+
+        if (App.numberGame == 1) {
+            System.exit(0);
+        }
     }
 }
