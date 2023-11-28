@@ -3,6 +3,8 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+
 import java.util.Scanner;
 
 public class Engine {
@@ -21,6 +23,9 @@ public class Engine {
                 break;
             case 4:
                 System.out.println(GCD.greetingGame());
+                break;
+            case 5:
+                System.out.println(Progression.greetingGame());
                 break;
             default:
                 System.exit(0);
@@ -42,6 +47,9 @@ public class Engine {
                     break;
                 case 4:
                     GCD.game();
+                    break;
+                case 5:
+                    Progression.game();
                     break;
                 default:
                     throw new Error("Error while default Engine.java");
