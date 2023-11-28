@@ -12,12 +12,14 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
         System.out.println("0 - Exit");
 
         String number = scanner.next();
 
         numberGame = Integer.parseInt(number);
 
+        Greet.greet();
         Engine.engine();
     }
 }

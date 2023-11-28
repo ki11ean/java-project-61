@@ -13,3 +13,6 @@ https://asciinema.org/a/scmSg4lVqsIvTJJJ21AvE8zcb
 
 ### Игры разума 6 шаг:
 https://asciinema.org/a/FUCXZkxiDJxZQSYdg7gCVzWBn
+
+### Игры разума 7 шаг:
+https://asciinema.org/a/ppMX6o7C1GIyLCauEJ9Ry8FB9

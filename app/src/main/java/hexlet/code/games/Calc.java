@@ -8,30 +8,33 @@ public class Calc {
         return "What is the result of the expression?";
     }
 
-    public static void calc() {
+    public static void game() {
 
         var operandOne = Engine.randomNumber();
         var operandTwo = Engine.randomNumber();
-        String[] operations = {"+", "-", "*"};
         var numberOperand = (int) (Math.random() * 3);
+        var operand = " ";
         var result = 0;
 
-        switch (operations[numberOperand]) {
-            case "+":
+        switch (numberOperand) {
+            case 1:
+                operand = " + ";
                 result = operandOne + operandTwo;
                 Engine.check = Integer.toString(result);
                 break;
-            case "-":
+            case 2:
+                operand = " - ";
                 result = operandOne - operandTwo;
                 Engine.check = Integer.toString(result);
                 break;
-            case "*":
+            case 3:
+                operand = " * ";
                 result = operandOne * operandTwo;
                 Engine.check = Integer.toString(result);
                 break;
             default:
                 throw new Error("Error while default Calc.java");
         }
-        System.out.println("Question: " + operandOne + " " + operations[numberOperand] + " " + operandTwo);
+        System.out.println("Question: " + operandOne + operand + operandTwo);
     }
 }

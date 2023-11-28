@@ -8,7 +8,7 @@ public class Even {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
-    public static void even() {
+    public static void game() {
 
         var randomNum = Engine.randomNumber();
 

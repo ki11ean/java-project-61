@@ -2,27 +2,25 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 import java.util.Scanner;
-
 
 public class Engine {
 
     public static int i;   //счётчик игр
-    public static String check;
-    public static String answer;
+    public static String check;     //переменная проверки
+    public static String answer;    //переменная клиента
     public static void engine() {
 
         switch (App.numberGame) {
-            case 1:
-                Greet.greet();
-                break;
             case 2:
-                Greet.greet();
                 System.out.println(Even.greetingGame());
                 break;
             case 3:
-                Greet.greet();
                 System.out.println(Calc.greetingGame());
+                break;
+            case 4:
+                System.out.println(GCD.greetingGame());
                 break;
             default:
                 System.exit(0);
@@ -37,10 +35,13 @@ public class Engine {
                     i = 4;
                     break;
                 case 2:
-                    Even.even();
+                    Even.game();
                     break;
                 case 3:
-                    Calc.calc();
+                    Calc.game();
+                    break;
+                case 4:
+                    GCD.game();
                     break;
                 default:
                     throw new Error("Error while default Engine.java");
