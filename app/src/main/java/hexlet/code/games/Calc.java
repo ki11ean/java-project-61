@@ -17,24 +17,21 @@ public class Calc {
         var result = 0;
 
         switch (numberOperand) {
-            case 1:
+            case 1 -> {
                 operand = " + ";
                 result = operandOne + operandTwo;
-                Engine.check = Integer.toString(result);
-                break;
-            case 2:
+            }
+            case 2 -> {
                 operand = " - ";
                 result = operandOne - operandTwo;
-                Engine.check = Integer.toString(result);
-                break;
-            case 3:
+            }
+            case 3 -> {
                 operand = " * ";
                 result = operandOne * operandTwo;
-                Engine.check = Integer.toString(result);
-                break;
-            default:
-                throw new Error("Error while default Calc.java");
+            }
+            default -> throw new Error("Error while default Calc.java");
         }
+        Engine.check = Integer.toString(result);
         System.out.println("Question: " + operandOne + operand + operandTwo);
     }
 }
