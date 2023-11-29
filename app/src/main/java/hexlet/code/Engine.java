@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
 import java.util.Scanner;
@@ -15,20 +16,12 @@ public class Engine {
     public static void engine() {
 
         switch (App.numberGame) {
-            case 2:
-                System.out.println(Even.greetingGame());
-                break;
-            case 3:
-                System.out.println(Calc.greetingGame());
-                break;
-            case 4:
-                System.out.println(GCD.greetingGame());
-                break;
-            case 5:
-                System.out.println(Progression.greetingGame());
-                break;
-            default:
-                System.exit(0);
+            case 2 -> System.out.println(Even.greetingGame());
+            case 3 -> System.out.println(Calc.greetingGame());
+            case 4 -> System.out.println(GCD.greetingGame());
+            case 5 -> System.out.println(Progression.greetingGame());
+            case 6 -> System.out.println(Prime.greetingGame());
+            default -> System.exit(0);
         }
 
         i = 0;
@@ -36,23 +29,12 @@ public class Engine {
 
         while (i < 3) {
             switch (App.numberGame) {
-                case 1:
-                    i = 4;
-                    break;
-                case 2:
-                    Even.game();
-                    break;
-                case 3:
-                    Calc.game();
-                    break;
-                case 4:
-                    GCD.game();
-                    break;
-                case 5:
-                    Progression.game();
-                    break;
-                default:
-                    throw new Error("Error while default Engine.java");
+                case 2 -> Even.game();
+                case 3 -> Calc.game();
+                case 4 -> GCD.game();
+                case 5 -> Progression.game();
+                case 6 -> Prime.game();
+                default -> throw new Error("Error while default Engine.java");
             }
             System.out.print("Your answer: ");
 
