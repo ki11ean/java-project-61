@@ -46,8 +46,6 @@ java {
     }
 }
 
-/*tasks.register("run") {
-    doLast {
-        standardInput = System.`in`
-    }
-}*/
+tasks.getByName("run", JavaExec::class) {
+    standardInput = System.`in`
+}
