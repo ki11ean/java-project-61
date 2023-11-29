@@ -10,12 +10,11 @@ public class Prime {
 
     public static void game() {
 
-        var randomNum = Engine.randomNumber();
+        int randomNum;
+        randomNum = Engine.randomNumber();
         System.out.println("Question: " + randomNum);
 
-        if (randomNum < 2) {
-            Engine.check = "no";
-        } else {
+        if (randomNum >= 2) {
 
             var i = 2;
             while (i < randomNum) {
@@ -26,6 +25,8 @@ public class Prime {
                 }
             }
             Engine.check = (i == randomNum) ? "yes" : "no";
+        } else {
+            Engine.check = "no";
         }
     }
 }
