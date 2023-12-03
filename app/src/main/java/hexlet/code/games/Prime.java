@@ -10,8 +10,7 @@ public class Prime {
 
     public static void game() {
 
-        int randomNum;
-        randomNum = Engine.randomNumber();
+        var randomNum = Engine.randomNumber();
         System.out.println("Question: " + randomNum);
 
         if (randomNum >= 2) {
