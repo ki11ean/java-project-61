@@ -8,9 +8,8 @@ public class Prime {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
-    public static String game() {
+    public static void game() {
 
-        var check = "";
         var randomNum = Engine.randomNumber();
         System.out.println("Question: " + randomNum);
 
@@ -24,10 +23,9 @@ public class Prime {
                     i++;
                 }
             }
-            check = (i == randomNum) ? "yes" : "no";
+            Engine.check = (i == randomNum) ? "yes" : "no";
         } else {
-            check = "no";
+            Engine.check = "no";
         }
-        return check;
     }
 }

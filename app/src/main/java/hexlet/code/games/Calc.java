@@ -8,9 +8,8 @@ public class Calc {
         return "What is the result of the expression?";
     }
 
-    public static String game() {
+    public static void game() {
 
-        var check = "";
         var operandOne = Engine.randomNumber();
         var operandTwo = Engine.randomNumber();
         final int numberOperator = (int) (Math.random() * 3);
@@ -32,8 +31,7 @@ public class Calc {
             }
             default -> throw new Error("Error while default Calc.java");
         }
-        check = Integer.toString(result);
+        Engine.check = Integer.toString(result);
         System.out.println("Question: " + operandOne + operator + operandTwo);
-        return check;
     }
 }

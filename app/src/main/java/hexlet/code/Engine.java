@@ -10,10 +10,11 @@ import java.util.Scanner;
 
 public class Engine {
 
+    public static String check;
     public static void engine(int numberGame) {
 
         var answer = "";
-        var check = "";
+
 
         switch (numberGame) {
             case 2 -> System.out.println(Even.greetingGame());
@@ -29,11 +30,11 @@ public class Engine {
 
         while (i < 3) {
             switch (numberGame) {
-                case 2 -> check = Even.game();
-                case 3 -> check = Calc.game();
-                case 4 -> check = GCD.game();
-                case 5 -> check = Progression.game();
-                case 6 -> check = Prime.game();
+                case 2 -> Even.game();
+                case 3 -> Calc.game();
+                case 4 -> GCD.game();
+                case 5 -> Progression.game();
+                case 6 -> Prime.game();
                 default -> throw new Error("Error while default Engine.java");
             }
             System.out.print("Your answer: ");
@@ -49,10 +50,10 @@ public class Engine {
         }
 
         if (i == 3) {
-            System.out.println("Congratulations, " + Greet.name + "!");
+            System.out.println("Congratulations, " + Greet.getName() + "!");
         } else {
             System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + check + "'.");
-            System.out.println("Let's try again, " + Greet.name + "!");
+            System.out.println("Let's try again, " + Greet.getName() + "!");
         }
     }
 

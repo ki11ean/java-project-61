@@ -8,12 +8,11 @@ public class Even {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
-    public static String game() {
-        var check = "";
+    public static void game() {
+
         var randomNum = Engine.randomNumber();
 
-        check = ((randomNum % 2) == 0) ? "yes" : "no";
+        Engine.check = ((randomNum % 2) == 0) ? "yes" : "no";
         System.out.println("Question: " + randomNum);
-        return check;
     }
 }

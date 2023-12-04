@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Greet {
-    static String name;
+    private static String name;
     public static void greet(int numberGame) {
         Scanner scanner = new Scanner(System.in);
 
@@ -17,5 +17,9 @@ public class Greet {
         if (numberGame == 1) {
             System.exit(0);
         }
+    }
+
+    public static  String getName() {
+        return Greet.name;
     }
 }

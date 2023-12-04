@@ -8,9 +8,8 @@ public class GCD {
         return "Find the greatest common divisor of given numbers.";
     }
 
-    public static String game() {
+    public static void game() {
 
-        var check = "";
         var numberOne = Engine.randomNumber();
         var numberTwo = Engine.randomNumber();
 
@@ -21,7 +20,6 @@ public class GCD {
             numberOne = numberTwo;
             numberTwo = tmp;
         }
-        check = Integer.toString(numberOne + numberTwo);
-        return check;
+        Engine.check = Integer.toString(numberOne + numberTwo);
     }
 }
