@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class App {
 
-    static int numberGame;
     public static void main(String[] args) {
+        int numberGame;
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please enter the game number and press Enter");
@@ -22,7 +22,7 @@ public class App {
 
         numberGame = Integer.parseInt(number);
 
-        Greet.greet();
+        Greet.greet(numberGame);
         Engine.engine(numberGame);
     }
 }

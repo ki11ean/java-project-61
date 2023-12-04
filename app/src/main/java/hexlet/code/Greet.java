@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Greet {
     static String name;
-    public static void greet() {
+    public static void greet(int numberGame) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the Brain Games!");
@@ -14,7 +14,7 @@ public class Greet {
 
         name = userName;
 
-        if (App.numberGame == 1) {
+        if (numberGame == 1) {
             System.exit(0);
         }
     }
