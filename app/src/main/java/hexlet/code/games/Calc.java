@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 public class Calc {
 
-    public static String greetingGame() {
+    public static String gameRule() {
         return "What is the result of the expression?";
     }
 

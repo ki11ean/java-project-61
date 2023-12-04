@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 public class GCD {
 
-    public static String greetingGame() {
+    public static String gameRule() {
         return "Find the greatest common divisor of given numbers.";
     }
 

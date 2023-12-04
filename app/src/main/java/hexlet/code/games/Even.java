@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 public class Even {
 
-    public static String greetingGame() {
+    public static String gameRule() {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 

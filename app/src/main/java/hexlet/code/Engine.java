@@ -13,19 +13,19 @@ public class Engine {
     public static String check;
     public static void engine(int numberGame) {
 
-        var answer = "";
-        final int howManyRounds = 3;
-
         switch (numberGame) {
-            case 2 -> System.out.println(Even.greetingGame());
-            case 3 -> System.out.println(Calc.greetingGame());
-            case 4 -> System.out.println(GCD.greetingGame());
-            case 5 -> System.out.println(Progression.greetingGame());
-            case 6 -> System.out.println(Prime.greetingGame());
+            case 2 -> System.out.println(Even.gameRule());
+            case 3 -> System.out.println(Calc.gameRule());
+            case 4 -> System.out.println(GCD.gameRule());
+            case 5 -> System.out.println(Progression.gameRule());
+            case 6 -> System.out.println(Prime.gameRule());
             default -> System.exit(0);
         }
 
+        final int howManyRounds = 3;
         var countRound = 0;
+        var answer = "";
+
         Scanner scanner = new Scanner(System.in);
 
         while (countRound < howManyRounds) {
@@ -49,7 +49,7 @@ public class Engine {
             }
         }
 
-        if (countRound == 3) {
+        if (countRound == howManyRounds) {
             System.out.println("Congratulations, " + Greet.getName() + "!");
         } else {
             System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + check + "'.");

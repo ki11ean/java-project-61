@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 public class Progression {
 
-    public static String greetingGame() {
+    public static String gameRule() {
         return "What number is missing in the progression?";
     }
 
