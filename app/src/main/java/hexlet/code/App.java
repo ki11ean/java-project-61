@@ -23,6 +23,6 @@ public class App {
         numberGame = Integer.parseInt(number);
 
         Greet.greet();
-        Engine.engine();
+        Engine.engine(numberGame);
     }
 }

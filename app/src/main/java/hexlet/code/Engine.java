@@ -10,12 +10,12 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static String check;     //переменная проверки
-    public static void engine() {
+    public static void engine(int numberGame) {
 
         var answer = "";
+        var check = "";
 
-        switch (App.numberGame) {
+        switch (numberGame) {
             case 2 -> System.out.println(Even.greetingGame());
             case 3 -> System.out.println(Calc.greetingGame());
             case 4 -> System.out.println(GCD.greetingGame());
@@ -28,19 +28,19 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
 
         while (i < 3) {
-            switch (App.numberGame) {
-                case 2 -> Even.game();
-                case 3 -> Calc.game();
-                case 4 -> GCD.game();
-                case 5 -> Progression.game();
-                case 6 -> Prime.game();
+            switch (numberGame) {
+                case 2 -> check = Even.game();
+                case 3 -> check = Calc.game();
+                case 4 -> check = GCD.game();
+                case 5 -> check = Progression.game();
+                case 6 -> check = Prime.game();
                 default -> throw new Error("Error while default Engine.java");
             }
             System.out.print("Your answer: ");
 
             answer = scanner.next();
 
-            if (answer.equals(Engine.check)) {
+            if (answer.equals(check)) {
                 System.out.println("Correct!");
                 i++;
             } else {
