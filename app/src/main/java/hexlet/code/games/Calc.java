@@ -12,7 +12,7 @@ public class Calc {
 
         var operandOne = Engine.randomNumber();
         var operandTwo = Engine.randomNumber();
-        var numberOperator = (int) (Math.random() * 3);
+        final int numberOperator = (int) (Math.random() * 3);
         var operator = " ";
         var result = 0;
 
