@@ -12,26 +12,26 @@ public class Calc {
 
         var operandOne = Engine.randomNumber();
         var operandTwo = Engine.randomNumber();
-        var numberOperand = (int) (Math.random() * 3);
-        var operand = " ";
+        var numberOperator = (int) (Math.random() * 3);
+        var operator = " ";
         var result = 0;
 
-        switch (numberOperand) {
-            case 1 -> {
-                operand = " + ";
+        switch (numberOperator) {
+            case 0 -> {
+                operator = " + ";
                 result = operandOne + operandTwo;
             }
-            case 2 -> {
-                operand = " - ";
+            case 1 -> {
+                operator = " - ";
                 result = operandOne - operandTwo;
             }
-            case 3 -> {
-                operand = " * ";
+            case 2 -> {
+                operator = " * ";
                 result = operandOne * operandTwo;
             }
             default -> throw new Error("Error while default Calc.java");
         }
         Engine.check = Integer.toString(result);
-        System.out.println("Question: " + operandOne + operand + operandTwo);
+        System.out.println("Question: " + operandOne + operator + operandTwo);
     }
 }
