@@ -12,8 +12,8 @@ public class Progression {
 
         var number = Engine.randomNumber();
         var progressionDiff = (int) (1 + Math.random() * 10);
-        var progressionLength = (int) (5 + Math.random() * 7);
-        var unknownNumber = (int) (1 + Math.random() * (progressionLength - 1));
+        var progressionLength = (int) (6 + Math.random() * 7);
+        var unknownNumber = (int) (2 + Math.random() * (progressionLength - 1));
         var resultProgression = new StringBuilder();
         var i = 0;
 
