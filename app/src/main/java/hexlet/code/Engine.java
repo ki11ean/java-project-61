@@ -14,7 +14,7 @@ public class Engine {
     public static void engine(int numberGame) {
 
         var answer = "";
-
+        final int howManyRounds = 3;
 
         switch (numberGame) {
             case 2 -> System.out.println(Even.greetingGame());
@@ -25,10 +25,10 @@ public class Engine {
             default -> System.exit(0);
         }
 
-        var i = 0;
+        var countRound = 0;
         Scanner scanner = new Scanner(System.in);
 
-        while (i < 3) {
+        while (countRound < howManyRounds) {
             switch (numberGame) {
                 case 2 -> Even.game();
                 case 3 -> Calc.game();
@@ -43,13 +43,13 @@ public class Engine {
 
             if (answer.equals(check)) {
                 System.out.println("Correct!");
-                i++;
+                countRound++;
             } else {
-                i = 4;
+                break;
             }
         }
 
-        if (i == 3) {
+        if (countRound == 3) {
             System.out.println("Congratulations, " + Greet.getName() + "!");
         } else {
             System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + check + "'.");
