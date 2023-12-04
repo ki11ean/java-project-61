@@ -57,6 +57,8 @@ public class Engine {
     }
 
     public static int randomNumber() {
-        return (int) (Math.random() * 100) + 1;
+        var max = 100;
+        var min = 1;
+        return (int) (Math.random() * max) + min;
     }
 }
