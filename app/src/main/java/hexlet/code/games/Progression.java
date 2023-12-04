@@ -19,18 +19,20 @@ public class Progression {
 
         resultProgression.append(number);
 
-        while (i < progressionLength) {
+        while (i < progressionLength - 1) {
 
-            number = number + progressionDiff;
             resultProgression.append(" ");
+            number += progressionDiff;
+
             if (i == unknownNumber) {
                 resultProgression.append("..");
                 Engine.check = Integer.toString(number);
             } else {
                 resultProgression.append(number);
             }
+
             i++;
         }
-        System.out.println(resultProgression);
+        System.out.println("Question: " + resultProgression);
     }
 }
