@@ -10,10 +10,10 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static int i;   //счётчик игр
     public static String check;     //переменная проверки
-    public static String answer;    //переменная клиента
     public static void engine() {
+
+        var answer = "";
 
         switch (App.numberGame) {
             case 2 -> System.out.println(Even.greetingGame());
@@ -24,7 +24,7 @@ public class Engine {
             default -> System.exit(0);
         }
 
-        i = 0;
+        var i = 0;
         Scanner scanner = new Scanner(System.in);
 
         while (i < 3) {
@@ -38,13 +38,13 @@ public class Engine {
             }
             System.out.print("Your answer: ");
 
-            Engine.answer = scanner.next();
+            answer = scanner.next();
 
-            if (Engine.answer.equals(Engine.check)) {
+            if (answer.equals(Engine.check)) {
                 System.out.println("Correct!");
-                Engine.i++;
+                i++;
             } else {
-                Engine.i = 4;
+                i = 4;
             }
         }
 

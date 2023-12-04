@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class App {
 
-    public static int numberGame;
+    static int numberGame;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
