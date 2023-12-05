@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
-        int numberGame;
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please enter the game number and press Enter");
@@ -18,9 +18,7 @@ public class App {
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
 
-        String number = scanner.next();
-
-        numberGame = Integer.parseInt(number);
+        String numberGame = scanner.next();
 
         Greet.greet(numberGame);
         Engine.engine(numberGame);

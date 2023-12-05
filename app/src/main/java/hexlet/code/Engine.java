@@ -11,14 +11,14 @@ import java.util.Scanner;
 public class Engine {
 
     public static String check;
-    public static void engine(int numberGame) {
+    public static void engine(String numberGame) {
 
         switch (numberGame) {
-            case 2 -> System.out.println(Even.gameRule());
-            case 3 -> System.out.println(Calc.gameRule());
-            case 4 -> System.out.println(GCD.gameRule());
-            case 5 -> System.out.println(Progression.gameRule());
-            case 6 -> System.out.println(Prime.gameRule());
+            case "2" -> System.out.println(Even.gameRule());
+            case "3" -> System.out.println(Calc.gameRule());
+            case "4" -> System.out.println(GCD.gameRule());
+            case "5" -> System.out.println(Progression.gameRule());
+            case "6" -> System.out.println(Prime.gameRule());
             default -> System.exit(0);
         }
 
@@ -30,11 +30,11 @@ public class Engine {
 
         while (countRound < howManyRounds) {
             switch (numberGame) {
-                case 2 -> Even.game();
-                case 3 -> Calc.game();
-                case 4 -> GCD.game();
-                case 5 -> Progression.game();
-                case 6 -> Prime.game();
+                case "2" -> Even.game();
+                case "3" -> Calc.game();
+                case "4" -> GCD.game();
+                case "5" -> Progression.game();
+                case "6" -> Prime.game();
                 default -> throw new Error("Error while default Engine.java");
             }
             System.out.print("Your answer: ");
