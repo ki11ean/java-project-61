@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static String check;
+    private static String check = "";
     public static void engine(String numberGame) {
 
         switch (numberGame) {
@@ -25,16 +25,17 @@ public class Engine {
         final int howManyRounds = 3;
         var countRound = 0;
         var answer = "";
+        //var check = "";
 
         Scanner scanner = new Scanner(System.in);
 
         while (countRound < howManyRounds) {
             switch (numberGame) {
-                case "2" -> Even.game();
-                case "3" -> Calc.game();
-                case "4" -> GCD.game();
-                case "5" -> Progression.game();
-                case "6" -> Prime.game();
+                case "2" -> setCheck(Even.game());
+                case "3" -> setCheck(Calc.game());
+                case "4" -> setCheck(GCD.game());
+                case "5" -> setCheck(Progression.game());
+                case "6" -> setCheck(Prime.game());
                 default -> throw new Error("Error while default Engine.java");
             }
             System.out.print("Your answer: ");
@@ -61,5 +62,9 @@ public class Engine {
         final int min = 1;
         final int max = 100;
         return (int) (Math.random() * max) + min;
+    }
+
+    public static void setCheck(String checkGame) {
+        check = checkGame;
     }
 }

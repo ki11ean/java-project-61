@@ -8,7 +8,7 @@ public class Progression {
         return "What number is missing in the progression?";
     }
 
-    public static void game() {
+    public static String game() {
 
         var number = Engine.randomNumber();
         final int progressionDiff = 2 + (int) (Math.random() * 10);
@@ -16,6 +16,7 @@ public class Progression {
         final int unknownNumber = 2 + (int) (Math.random() * (progressionLength - 3));
         var resultProgression = new StringBuilder();
         var i = 0;
+        var check = "";
 
         resultProgression.append(number);
 
@@ -26,7 +27,7 @@ public class Progression {
 
             if (i == unknownNumber) {
                 resultProgression.append("..");
-                Engine.check = Integer.toString(number);
+                check = Integer.toString(number);
             } else {
                 resultProgression.append(number);
             }
@@ -34,5 +35,6 @@ public class Progression {
             i++;
         }
         System.out.println("Question: " + resultProgression);
+        return check;
     }
 }
