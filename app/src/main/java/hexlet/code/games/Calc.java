@@ -16,9 +16,9 @@ public class Calc {
         var countRound = 0;
 
         while (countRound < App.HOWMANYROUNDS) {
-            var operandOne = Utils.generateNumber(1, 100);
-            var operandTwo = Utils.generateNumber(1, 100);
-            var numberOperator = Utils.generateNumber(0, 2);
+            final int operandOne = Utils.generateNumber(1, 100);
+            final int operandTwo = Utils.generateNumber(1, 100);
+            final int numberOperator = Utils.generateNumber(0, 2);
             System.out.println(numberOperator);
             String[] calcChecks = checkCalc(operandOne, operandTwo, numberOperator);
             System.out.println(Arrays.toString((calcChecks)));

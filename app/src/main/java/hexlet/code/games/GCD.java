@@ -14,8 +14,8 @@ public class GCD {
         var countRound = 0;
 
         while (countRound < App.HOWMANYROUNDS) {
-            var numberOne = Utils.generateNumber(1, 100);
-            var numberTwo = Utils.generateNumber(1, 100);
+            final int numberOne = Utils.generateNumber(1, 100);
+            final int numberTwo = Utils.generateNumber(1, 100);
             questions[countRound] = numberOne + " " + numberTwo;
             checks[countRound] = checkGCD(numberOne, numberTwo);
             countRound++;

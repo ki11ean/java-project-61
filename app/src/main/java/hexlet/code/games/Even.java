@@ -14,7 +14,7 @@ public class Even {
         var countRound = 0;
 
         while (countRound < App.HOWMANYROUNDS) {
-            var number = Utils.generateNumber(1, 100);
+            final int number = Utils.generateNumber(1, 100);
             questions[countRound] = Integer.toString(number);
             checks[countRound] = ((number % 2) == 0) ? "yes" : "no";
             countRound++;

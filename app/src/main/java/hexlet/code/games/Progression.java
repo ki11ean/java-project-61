@@ -14,10 +14,10 @@ public class Progression {
         var countRound = 0;
 
         while (countRound < App.HOWMANYROUNDS) {
-            var firstNumberProgression = Utils.generateNumber(1, 100);
-            var progressionDiff = Utils.generateNumber(2, 12);
-            var progressionLength = Utils.generateNumber(6, 12);
-            var hiddenMemberIndex = Utils.generateNumber(2, progressionLength - 5);
+            final int firstNumberProgression = Utils.generateNumber(1, 100);
+            final int progressionDiff = Utils.generateNumber(2, 12);
+            final int progressionLength = Utils.generateNumber(6, 12);
+            final int hiddenMemberIndex = Utils.generateNumber(2, progressionLength - 5);
 
             String[] progressions = makeProgressions(firstNumberProgression, progressionDiff, progressionLength);
             checks[countRound] = progressions[hiddenMemberIndex];
