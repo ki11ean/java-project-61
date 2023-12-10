@@ -4,6 +4,8 @@ import hexlet.code.App;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
+import java.util.Arrays;
+
 public class Calc {
     public static void game() {
 
@@ -16,8 +18,10 @@ public class Calc {
         while (countRound < App.HOWMANYROUNDS) {
             var operandOne = Utils.generateNumber(1, 100);
             var operandTwo = Utils.generateNumber(1, 100);
-            var numberOperator = Utils.generateNumber(0, 3);
+            var numberOperator = Utils.generateNumber(0, 2);
+            System.out.println(numberOperator);
             String[] calcChecks = checkCalc(operandOne, operandTwo, numberOperator);
+            System.out.println(Arrays.toString((calcChecks)));
             questions[countRound] = (operandOne + calcChecks[0] + operandTwo);
             checks[countRound] = calcChecks[1];
             countRound++;
