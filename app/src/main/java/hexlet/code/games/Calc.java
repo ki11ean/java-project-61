@@ -1,39 +1,50 @@
 package hexlet.code.games;
 
+import hexlet.code.App;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calc {
+    public static void game() {
 
-    public static String gameRule() {
-        return "What is the result of the expression?";
+        var gameRule = "What is the result of the expression?";
+        String[] questions = new String[App.HOWMANYROUNDS];
+        String[] checks = new String[App.HOWMANYROUNDS];
+
+        var countRound = 0;
+
+        while (countRound < App.HOWMANYROUNDS) {
+            var operandOne = Utils.generateNumber(1, 100);
+            var operandTwo = Utils.generateNumber(1, 100);
+            var numberOperator = Utils.generateNumber(0, 3);
+            String[] calcChecks = checkCalc(operandOne, operandTwo, numberOperator);
+            questions[countRound] = (operandOne + calcChecks[0] + operandTwo);
+            checks[countRound] = calcChecks[1];
+            countRound++;
+        }
+        Engine.engine(gameRule, questions, checks);
     }
 
-    public static String game() {
+    public static String[] checkCalc(int operandOne, int operandTwo, int numberOperator) {
 
-        var operandOne = Engine.randomNumber();
-        var operandTwo = Engine.randomNumber();
-        final int numberOperator = (int) (Math.random() * 3);
-        var operator = " ";
-        var result = 0;
-        var check = "";
+        String[] calcChecks = new String[2];
 
         switch (numberOperator) {
             case 0 -> {
-                operator = " + ";
-                result = operandOne + operandTwo;
+                calcChecks[0] = " + ";
+                calcChecks[1] = Integer.toString(operandOne + operandTwo);
             }
             case 1 -> {
-                operator = " - ";
-                result = operandOne - operandTwo;
+                calcChecks[0] = " - ";
+                calcChecks[1] = Integer.toString(operandOne - operandTwo);
             }
             case 2 -> {
-                operator = " * ";
-                result = operandOne * operandTwo;
+                calcChecks[0] = " * ";
+                calcChecks[1] = Integer.toString(operandOne * operandTwo);
             }
             default -> throw new Error("Error while default Calc.java");
         }
-        check = Integer.toString(result);
-        System.out.println("Question: " + operandOne + operator + operandTwo);
-        return check;
+
+        return calcChecks;
     }
 }

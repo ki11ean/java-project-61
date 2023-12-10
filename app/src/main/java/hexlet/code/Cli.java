@@ -1,4 +1,4 @@
-/*package hexlet.code;
+package hexlet.code;
 import java.util.Scanner;
 public class Cli {
     public static void cli() {
@@ -9,6 +9,6 @@ public class Cli {
         System.out.println("Hello, " + userName + "!");
 
         scanner.close();
+        System.exit(0);
     }
 }
- */

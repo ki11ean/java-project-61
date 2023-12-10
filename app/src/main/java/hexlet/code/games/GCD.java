@@ -1,26 +1,34 @@
 package hexlet.code.games;
 
+import hexlet.code.App;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GCD {
+    public static void game() {
 
-    public static String gameRule() {
-        return "Find the greatest common divisor of given numbers.";
+        var gameRule = "Find the greatest common divisor of given numbers.";
+        String[] questions = new String[App.HOWMANYROUNDS];
+        String[] checks = new String[App.HOWMANYROUNDS];
+
+        var countRound = 0;
+
+        while (countRound < App.HOWMANYROUNDS) {
+            var numberOne = Utils.generateNumber(1, 100);
+            var numberTwo = Utils.generateNumber(1, 100);
+            questions[countRound] = numberOne + " " + numberTwo;
+            checks[countRound] = checkGCD(numberOne, numberTwo);
+            countRound++;
+        }
+        Engine.engine(gameRule, questions, checks);
     }
 
-    public static String game() {
-
-        var numberOne = Engine.randomNumber();
-        var numberTwo = Engine.randomNumber();
-        var check = "";
-        System.out.println("Question: " + numberOne + " " + numberTwo);
-
+    public static String checkGCD(int numberOne, int numberTwo) {
         while (numberTwo != 0) {
             int tmp = numberOne % numberTwo;
             numberOne = numberTwo;
             numberTwo = tmp;
         }
-        check = Integer.toString(numberOne + numberTwo);
-        return check;
+        return Integer.toString(numberOne + numberTwo);
     }
 }
