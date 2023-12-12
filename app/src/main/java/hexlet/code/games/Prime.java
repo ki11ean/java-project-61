@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
@@ -8,21 +7,17 @@ public class Prime {
     public static void game() {
 
         var gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[] questions = new String[App.HOWMANYROUNDS];
-        String[] checks = new String[App.HOWMANYROUNDS];
+        String[][] questionsChecks = new String[Engine.HOW_MANY_ROUNDS][2];
 
-        var countRound = 0;
-
-        while (countRound < App.HOWMANYROUNDS) {
+        for (var questionsCheck: questionsChecks) {
             final int number = Utils.generateNumber(1, 100);
-            questions[countRound] = Integer.toString(number);
-            checks[countRound] = checkPrime(number);
-            countRound++;
+            questionsCheck[0] = Integer.toString(number);
+            questionsCheck[1] = isPrime(number) ? "yes" : "no";
         }
-        Engine.engine(gameRule, questions, checks);
+        Engine.engine(gameRule, questionsChecks);
     }
 
-    public static String checkPrime(int number) {
+    public static boolean isPrime(int number) {
         if (number >= 2) {
 
             var i = 2;
@@ -33,10 +28,9 @@ public class Prime {
                     i++;
                 }
             }
-            return  (i == number) ? "yes" : "no";
+            return  (i == number);
         } else {
-            return "no";
+            return false;
         }
-
     }
 }

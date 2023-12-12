@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
@@ -8,25 +7,20 @@ public class Progression {
     public static void game() {
 
         var gameRule = "What number is missing in the progression?";
-        String[] questions = new String[App.HOWMANYROUNDS];
-        String[] checks = new String[App.HOWMANYROUNDS];
+        String[][] questionsChecks = new String[Engine.HOW_MANY_ROUNDS][2];
 
-        var countRound = 0;
-
-        while (countRound < App.HOWMANYROUNDS) {
+        for (var questionsCheck: questionsChecks) {
             final int firstNumberProgression = Utils.generateNumber(1, 100);
             final int progressionDiff = Utils.generateNumber(2, 12);
             final int progressionLength = Utils.generateNumber(6, 12);
             final int hiddenMemberIndex = Utils.generateNumber(2, progressionLength - 5);
 
             String[] progressions = makeProgressions(firstNumberProgression, progressionDiff, progressionLength);
-            checks[countRound] = progressions[hiddenMemberIndex];
+            questionsCheck[1] = progressions[hiddenMemberIndex];
             progressions[hiddenMemberIndex] = "..";
-            questions[countRound] = String.join(" ", progressions);
-
-            countRound++;
+            questionsCheck[0]  = String.join(" ", progressions);
         }
-        Engine.engine(gameRule, questions, checks);
+        Engine.engine(gameRule, questionsChecks);
     }
 
     public static String[] makeProgressions(int firstNumberProgression, int progressionDiff, int progressionLength) {

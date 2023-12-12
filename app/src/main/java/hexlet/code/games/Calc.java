@@ -1,54 +1,39 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
-
-import java.util.Arrays;
 
 public class Calc {
     public static void game() {
 
         var gameRule = "What is the result of the expression?";
-        String[] questions = new String[App.HOWMANYROUNDS];
-        String[] checks = new String[App.HOWMANYROUNDS];
+        String[][] questionsChecks = new String[Engine.HOW_MANY_ROUNDS][2];
 
-        var countRound = 0;
-
-        while (countRound < App.HOWMANYROUNDS) {
+        for (var questionsCheck: questionsChecks) {
             final int operandOne = Utils.generateNumber(1, 100);
             final int operandTwo = Utils.generateNumber(1, 100);
             final int numberOperator = Utils.generateNumber(0, 2);
-            System.out.println(numberOperator);
-            String[] calcChecks = checkCalc(operandOne, operandTwo, numberOperator);
-            System.out.println(Arrays.toString((calcChecks)));
-            questions[countRound] = (operandOne + calcChecks[0] + operandTwo);
-            checks[countRound] = calcChecks[1];
-            countRound++;
+            String[] operators = {" + ", " - ", " * "};
+            questionsCheck[0] = (operandOne + operators[numberOperator] + operandTwo);
+            questionsCheck[1] =
+                    Integer.toString(checkCalc(operandOne, operandTwo, operators[numberOperator]));
         }
-        Engine.engine(gameRule, questions, checks);
+        Engine.engine(gameRule, questionsChecks);
     }
 
-    public static String[] checkCalc(int operandOne, int operandTwo, int numberOperator) {
+    public static int checkCalc(int operandOne, int operandTwo, String operator) {
 
-        String[] calcChecks = new String[2];
-
-        switch (numberOperator) {
-            case 0 -> {
-                calcChecks[0] = " + ";
-                calcChecks[1] = Integer.toString(operandOne + operandTwo);
+        switch (operator) {
+            case " + " -> {
+                return operandOne + operandTwo;
             }
-            case 1 -> {
-                calcChecks[0] = " - ";
-                calcChecks[1] = Integer.toString(operandOne - operandTwo);
+            case " - " -> {
+                return operandOne - operandTwo;
             }
-            case 2 -> {
-                calcChecks[0] = " * ";
-                calcChecks[1] = Integer.toString(operandOne * operandTwo);
+            case " * " -> {
+                return operandOne * operandTwo;
             }
             default -> throw new Error("Error while default Calc.java");
         }
-
-        return calcChecks;
     }
 }

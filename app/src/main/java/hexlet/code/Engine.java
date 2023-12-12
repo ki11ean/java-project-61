@@ -3,7 +3,10 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static void engine(String gameRule, String[] questions, String[] checks) {
+
+    public static final int HOW_MANY_ROUNDS = 3;
+
+    public static void engine(String gameRule, String[][] questionsChecks) {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -11,28 +14,24 @@ public class Engine {
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(gameRule);
-        var countRound = 0;
-        var answer = "";
 
-        while (countRound < App.HOWMANYROUNDS) {
-            System.out.println("Question: " + questions[countRound]);
+        for (var questionsCheck: questionsChecks) {
+            System.out.println("Question: " + questionsCheck[0]);
             System.out.print("Your answer: ");
 
-            answer = scanner.next();
+            String answer = scanner.next();
 
-            if (answer.equals(checks[countRound])) {
+            if (answer.equals(questionsCheck[1])) {
                 System.out.println("Correct!");
-                countRound++;
             } else {
-                break;
+                System.out.println("'" + answer + "' is wrong answer ;(. "
+                        + "Correct answer was '" + questionsCheck[1] + "'.");
+                System.out.println("Let's try again, " + userName + "!");
+                return;
             }
         }
 
-        if (countRound == App.HOWMANYROUNDS) {
-            System.out.println("Congratulations, " + userName + "!");
-        } else {
-            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + checks[countRound] + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-        }
+        System.out.println("Congratulations, " + userName + "!");
+
     }
 }

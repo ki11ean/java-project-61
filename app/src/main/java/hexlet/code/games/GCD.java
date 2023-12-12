@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
@@ -8,19 +7,15 @@ public class GCD {
     public static void game() {
 
         var gameRule = "Find the greatest common divisor of given numbers.";
-        String[] questions = new String[App.HOWMANYROUNDS];
-        String[] checks = new String[App.HOWMANYROUNDS];
+        String[][] questionsChecks = new String[Engine.HOW_MANY_ROUNDS][2];
 
-        var countRound = 0;
-
-        while (countRound < App.HOWMANYROUNDS) {
+        for (var questionsCheck: questionsChecks) {
             final int numberOne = Utils.generateNumber(1, 100);
             final int numberTwo = Utils.generateNumber(1, 100);
-            questions[countRound] = numberOne + " " + numberTwo;
-            checks[countRound] = checkGCD(numberOne, numberTwo);
-            countRound++;
+            questionsCheck[0] = numberOne + " " + numberTwo;
+            questionsCheck[1] = checkGCD(numberOne, numberTwo);
         }
-        Engine.engine(gameRule, questions, checks);
+        Engine.engine(gameRule, questionsChecks);
     }
 
     public static String checkGCD(int numberOne, int numberTwo) {

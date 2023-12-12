@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
@@ -8,17 +7,13 @@ public class Even {
     public static void game() {
 
         var gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[] questions = new String[App.HOWMANYROUNDS];
-        String[] checks = new String[App.HOWMANYROUNDS];
+        String[][] questionsChecks = new String[Engine.HOW_MANY_ROUNDS][2];
 
-        var countRound = 0;
-
-        while (countRound < App.HOWMANYROUNDS) {
+        for (var questionsCheck: questionsChecks) {
             final int number = Utils.generateNumber(1, 100);
-            questions[countRound] = Integer.toString(number);
-            checks[countRound] = ((number % 2) == 0) ? "yes" : "no";
-            countRound++;
+            questionsCheck[0] = Integer.toString(number);
+            questionsCheck[1] = ((number % 2) == 0) ? "yes" : "no";
         }
-        Engine.engine(gameRule, questions, checks);
+        Engine.engine(gameRule, questionsChecks);
     }
 }
