@@ -16,5 +16,9 @@
 ## Run
 
 ```bash
+make install
+```
+
+```bash
 make run-dist
 ```
