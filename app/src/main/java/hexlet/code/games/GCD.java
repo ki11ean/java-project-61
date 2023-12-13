@@ -13,17 +13,17 @@ public class GCD {
             final int numberOne = Utils.generateNumber(1, 100);
             final int numberTwo = Utils.generateNumber(1, 100);
             questionsCheck[0] = numberOne + " " + numberTwo;
-            questionsCheck[1] = checkGCD(numberOne, numberTwo);
+            questionsCheck[1] = Integer.toString(gcd(numberOne, numberTwo));
         }
         Engine.engine(gameRule, questionsChecks);
     }
 
-    public static String checkGCD(int numberOne, int numberTwo) {
+    public static int gcd(int numberOne, int numberTwo) {
         while (numberTwo != 0) {
             int tmp = numberOne % numberTwo;
             numberOne = numberTwo;
             numberTwo = tmp;
         }
-        return Integer.toString(numberOne + numberTwo);
+        return numberOne + numberTwo;
     }
 }

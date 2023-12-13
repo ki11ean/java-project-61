@@ -16,12 +16,12 @@ public class Calc {
             String[] operators = {" + ", " - ", " * "};
             questionsCheck[0] = (operandOne + operators[numberOperator] + operandTwo);
             questionsCheck[1] =
-                    Integer.toString(checkCalc(operandOne, operandTwo, operators[numberOperator]));
+                    Integer.toString(calc(operandOne, operandTwo, operators[numberOperator]));
         }
         Engine.engine(gameRule, questionsChecks);
     }
 
-    public static int checkCalc(int operandOne, int operandTwo, String operator) {
+    public static int calc(int operandOne, int operandTwo, String operator) {
 
         switch (operator) {
             case " + " -> {
